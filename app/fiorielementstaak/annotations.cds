@@ -164,6 +164,11 @@ annotate service.Game with @(
                 $Type : 'UI.DataField',
                 Label : 'Release Date',
                 Value : Release_date,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'Description',
+                Value : Description,
             }
         ]
     }

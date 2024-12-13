@@ -12,7 +12,7 @@ entity Game {
 }
 
 entity Student @odata.draft.enabled{
-  key Student_ID : Integer @Core.Computed;
+  key Student_ID : Integer;
       First_name : String(100);
       Last_name  : String(100);
       to_favos   : Composition of many FavoriteGame
