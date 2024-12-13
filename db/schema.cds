@@ -11,7 +11,7 @@ entity Game {
       Description  : LargeString;
 }
 
-entity Student {
+entity Student @odata.draft.enabled{
   key Student_ID : Integer @Core.Computed;
       First_name : String(100);
       Last_name  : String(100);
@@ -19,7 +19,7 @@ entity Student {
                      on to_favos.Student_ID = $self.Student_ID;
 }
 
-entity FavoriteGame {
+entity FavoriteGame{
   key Game_ID    : Integer;
   key Student_ID : Integer;
       to_game    : Association to Game
