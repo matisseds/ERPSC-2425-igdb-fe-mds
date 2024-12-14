@@ -2,11 +2,11 @@ using GameService as service from '../../srv/game-service';
 
 annotate service.Student with @(
     UI.LineItem : [
-        {
-            $Type : 'UI.DataField',
-            Label : 'Student ID',
-            Value : Student_ID,
-        },
+     //   {
+     //       $Type : 'UI.DataField',
+     //       Label : 'Student ID',
+     //       Value : Student_ID,
+     //   },
         {
             $Type : 'UI.DataField',
             Label : 'First Name',
@@ -74,11 +74,11 @@ annotate service.Student with @(
 
 annotate service.FavoriteGame with @(
     UI.LineItem : [
-        {
-            $Type : 'UI.DataField',
-            Value : Game_ID,
-            Label : 'Game ID',
-        },
+     //   {
+     //       $Type : 'UI.DataField',
+      //      Value : Game_ID,
+    //        Label : 'Game ID',
+    //    },
         {
             $Type : 'UI.DataField',
             Value : to_game.Name,
