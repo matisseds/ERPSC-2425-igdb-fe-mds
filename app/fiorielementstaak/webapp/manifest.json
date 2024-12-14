@@ -7,8 +7,8 @@
     "applicationVersion": {
       "version": "0.0.1"
     },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
+    "title": "Student Management",
+    "description": "Manage student and game information",
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
@@ -99,6 +99,11 @@
           "pattern": "Student({key})/to_favos({key2}):?query:",
           "name": "FavoriteGameObjectPage",
           "target": "FavoriteGameObjectPage"
+        },
+        {
+          "pattern": "Game({gameId}):?query:",
+          "name": "GameObjectPage",
+          "target": "GameObjectPage"
         }
       ],
       "targets": {
@@ -145,7 +150,25 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Student/to_favos"
+              "contextPath": "/Student/to_favos",
+              "navigation": {
+                "to_game": {
+                  "detail": {
+                    "route": "GameObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "GameObjectPage": {
+          "type": "Component",
+          "id": "GameObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/Game"
             }
           }
         }

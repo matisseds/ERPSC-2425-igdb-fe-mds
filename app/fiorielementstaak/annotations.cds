@@ -18,18 +18,32 @@ annotate service.Student with @(
             Value : Last_name,
         }
     ],
+    UI.HeaderInfo : {
+        TypeName : 'Student',
+        TypeNamePlural : 'Students',
+        Title : {
+            $Type : 'UI.DataField',
+            Value : First_name,
+            Label : 'First Name'
+        },
+        Description : {
+            $Type : 'UI.DataField',
+            Value : Last_name,
+            Label : 'Last Name'
+        }
+    },
     UI.Facets : [
         {
             $Type : 'UI.ReferenceFacet',
             ID : 'GeneralInfo',
-            Label : 'General Information',
+            Label : 'Student Information', 
             Target : '@UI.FieldGroup#GeneralInfoGroup',
         },
         {
             $Type : 'UI.ReferenceFacet',
             ID : 'FavoritesFacet',
-            Label : 'Favorite Games',
-            Target : 'to_favos/@UI.LineItem', 
+            Label : 'Favorite Games', 
+            Target : 'to_favos/@UI.LineItem',
         }
     ]
 );
@@ -37,6 +51,7 @@ annotate service.Student with @(
 annotate service.Student with @(
     UI.FieldGroup #GeneralInfoGroup : {
         $Type : 'UI.FieldGroupType',
+        Label : 'Student Information', 
         Data : [
             {
                 $Type : 'UI.DataField',
@@ -74,7 +89,7 @@ annotate service.FavoriteGame with @(
         {
             $Type : 'UI.ReferenceFacet',
             ID : 'FavoriteGameDetails',
-            Label : 'Favorite Game Details',
+            Label : 'Details of Favorite Game',
             Target : '@UI.FieldGroup#FavoriteGameDetailsGroup',
         }
     ]
@@ -83,6 +98,7 @@ annotate service.FavoriteGame with @(
 annotate service.FavoriteGame with @(
     UI.FieldGroup #FavoriteGameDetailsGroup : {
         $Type : 'UI.FieldGroupType',
+        Label : 'Favorite Game Details', 
         Data : [
             {
                 $Type : 'UI.DataField',
@@ -97,6 +113,8 @@ annotate service.FavoriteGame with @(
         ]
     }
 );
+
+
 
 annotate service.Game with @(
     UI.LineItem : [
@@ -126,11 +144,25 @@ annotate service.Game with @(
             Label : 'Release Date',
         }
     ],
+    UI.HeaderInfo : {
+        TypeName : 'Game',
+        TypeNamePlural : 'Games',
+        Title : {
+            $Type : 'UI.DataField',
+            Value : Name,
+            Label : 'Game Name'
+        },
+        Description : {
+            $Type : 'UI.DataField',
+            Value : Genre,
+            Label : 'Genre'
+        }
+    },
     UI.Facets : [
         {
             $Type : 'UI.ReferenceFacet',
             ID : 'GameDetailsFacet',
-            Label : 'Game Details',
+            Label : 'Detailed Information About the Game', 
             Target : '@UI.FieldGroup#GameDetailsGroup',
         }
     ]
@@ -139,6 +171,7 @@ annotate service.Game with @(
 annotate service.Game with @(
     UI.FieldGroup #GameDetailsGroup : {
         $Type : 'UI.FieldGroupType',
+        Label : 'Game Details',
         Data : [
             {
                 $Type : 'UI.DataField',
