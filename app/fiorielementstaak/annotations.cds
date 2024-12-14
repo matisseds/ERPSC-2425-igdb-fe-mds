@@ -16,7 +16,7 @@ annotate service.Student with @(
             $Type : 'UI.DataField',
             Label : 'Last Name',
             Value : Last_name,
-        }
+        },
     ],
     UI.HeaderInfo : {
         TypeName : 'Student',
@@ -69,28 +69,38 @@ annotate service.Student with @(
                 Value : Last_name,
             }
         ]
-    }
+    },
+    
 );
 
 annotate service.FavoriteGame with @(
+    UI.HeaderInfo : {
+        TypeName : 'Favorite Game',
+        TypeNamePlural : 'Favorite Games',
+        Title : {
+            $Type : 'UI.DataField',
+            Value : to_game.Name,
+            Label : 'Game Name'
+        },
+        Description : {
+            $Type : 'UI.DataField',
+            Value : to_game.Genre,
+            Label : 'Genre'
+        }
+    },
     UI.LineItem : [
-     //   {
-     //       $Type : 'UI.DataField',
-      //      Value : Game_ID,
-    //        Label : 'Game ID',
-    //    },
         {
             $Type : 'UI.DataField',
             Value : to_game.Name,
-            Label : 'Game Name',
+            Label : 'Game Name'
         }
     ],
     UI.Facets : [
         {
             $Type : 'UI.ReferenceFacet',
             ID : 'FavoriteGameDetails',
-            Label : 'Details of favorite game',
-            Target : '@UI.FieldGroup#FavoriteGameDetailsGroup',
+            Label : '', 
+            Target : '@UI.FieldGroup#FavoriteGameDetailsGroup'
         }
     ]
 );
@@ -98,39 +108,28 @@ annotate service.FavoriteGame with @(
 annotate service.FavoriteGame with @(
     UI.FieldGroup #FavoriteGameDetailsGroup : {
         $Type : 'UI.FieldGroupType',
-        Label : 'Favorite Game Details', 
+        Label : 'Game Details',
         Data : [
             {
                 $Type : 'UI.DataField',
                 Label : 'Game ID',
-                Value : Game_ID,
+                Value : Game_ID
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'Game Name',
-                Value : to_game.Name,
-            },
-                        {
-                $Type : 'UI.DataField',
-                Label : 'Genre',
-                Value : to_game.Genre,
-            },
-                        {
-                $Type : 'UI.DataField',
                 Label : 'Publisher',
-                Value : to_game.Publisher,
+                Value : to_game.Publisher
             },
             {
                 $Type : 'UI.DataField',
                 Label : 'Release Date',
-                Value : to_game.Release_date,
+                Value : to_game.Release_date
             },
             {
                 $Type : 'UI.DataField',
                 Label : 'Description',
-                Value : to_game.Description,
+                Value : to_game.Description
             }
-            
         ]
     }
 );
