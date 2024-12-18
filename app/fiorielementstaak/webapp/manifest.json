@@ -121,7 +121,8 @@
                     "route": "StudentObjectPage"
                   }
                 }
-              }
+              },
+              "enableFilterBar": false
             }
           }
         },
